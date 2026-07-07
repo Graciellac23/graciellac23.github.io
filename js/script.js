@@ -24,7 +24,7 @@ function toggleFav(btn) {
         if (favoritos.indexOf(nombre) == -1) {
             favoritos.push(nombre);
         }
-        mostrarAlerta('El producto ' + nombre + 'se añadió a favoritos');
+        mostrarAlerta('El producto ' + nombre + ' se añadió a favoritos');
 
     } else {
         var posicion = favoritos.indexOf(nombre);
