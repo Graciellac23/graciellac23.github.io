@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GoldenBox. arreglos florares y más detalles">
+    <meta name="keywords" content="flores, bandejas, detalles">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Graciella Castillo">
+    <title>Contactos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="ImagenesGB/LogoGB.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="Css/Style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-golden">
+        <div class="container-fluid">
+            <a class="navbar-brand marca-golden" href="index.html">
+                <img src="ImagenesGB/LogoGB.jpg" alt="Logo Golden Box" width="45" height="45" class="rounded-circle" style="object-fit: cover;">
+                <span class="texto-golden">Golden</span>
+                <span class="texto-box">Box</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGolden" aria-controls="navbarGolden" aria-expanded="false" aria-label="Mostrar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarGolden">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Enlaces.html">Enlaces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contactos.html">Contactos</a></li>
+                    <li class="nav-item" style="position:relative;">
+                        <a class="nav-link position-relative" href="#" id="favLink" title="Mis favoritos" onclick="toggleListaFav(event)">
+                            <i class="bi bi-heart"></i>
+                            <span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle" id="favBadge" style="font-size: 0.6rem;">0</span>
+                        </a>
+                        <div id="favDropdown" class="fav-dropdown" style="display:none;">
+                            <ol id="favLista"></ol>
+                            <p id="favVacio" style="display:none; margin:0; padding:8px; color:#999;">Sin favoritos</p>
+                        </div>
+                    </li>
+                </ul>
+                <button onclick="cambiarModo()" class="btn btn-outline-dark ms-3" id="btnModo">
+                    <i class="bi bi-moon-fill" id="iconoModo"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+<br>
+<br>
+<br>
+<!--Enviar mensaje -->
+    <section class="py-5">
+        <div class="container">
+            <h1 class="fw-bold text-center mb-5"><span class="texto-golden">Contáctanos</span></h1>
+            <div class="row g-5">
+                <div class="col-md-7">
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <h4 class="fw-bold mb-4 texto-golden">Envíanos un mensaje</h4>
+                        <form id="formContacto">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-medium">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label fw-medium">Correo electrónico</label>
+                                <input type="email" class="form-control" id="correo" placeholder="graciellacas23@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label fw-medium">Asunto</label>
+                                <input type="text" class="form-control" id="asunto">
+                            </div>
+                            <div class="mb-4">
+                                <label for="mensaje" class="form-label fw-medium">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" rows="4" ></textarea>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn px-4 py-2" style="background-color:#E8A0B4;color:#fff;border-radius:50px;font-weight:600;" onclick="enviarMensaje()">Enviar mensaje</button>
+                                <button type="reset" class="btn px-4 py-2" style="background-color:#6c757d;color:#fff;border-radius:50px;font-weight:600;">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5"> <!--Cuadro de la info-->
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <h4 class="fw-bold mb-4 texto-golden">Información de contacto</h4>
+                        <p class="mb-3"><i class="bi bi-envelope-fill texto-golden me-2"></i><a href="mailto:goldenbox.cs@gmail.com" class="text-decoration-none">goldenbox.cs@gmail.com</a></p>
+                        <p class="mb-3"><i class="bi bi-whatsapp texto-golden me-2"></i><a href="https://wa.me/18496262310" target="_blank" class="text-decoration-none">+1 (849) 626-2310</a></p>
+                        <p class="mb-3"><i class="bi bi-geo-alt-fill texto-golden me-2"></i>Santo Domingo / Baní, Rep. Dominicana</p>
+                        <div class="redes-sociales mt-4 pt-3 border-top">
+                            <a href="https://instagram.com/goldenbox_cs" target="_blank" class="me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="https://wa.me/18496262310" target="_blank" class="me-3 fs-4"><i class="bi bi-whatsapp"></i></a>
+                            <a href="mailto:goldenbox.cs@gmail.com" class="fs-4"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+<!-- Footer -->
+<footer class="py-5 mt-5 bg-white">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 texto-golden">Preguntas frecuentes</h5>
+                <div class="accordion" id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                ¿Cómo puedo hacer un pedido?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Los pedidos se realizan por mensaje directo o contacto telefónico, indicando el producto que deseas y la fecha de entrega.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                ¿Con cuánta anticipación debo ordenar?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Se recomienda hacer el pedido con al menos 24 a 48 horas de anticipación para garantizar disponibilidad.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                ¿Se pueden hacer pedidos personalizados?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, se pueden crear pedidos personalizados según la ocasión y las preferencias del cliente.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                ¿Realizamos entregas a domicilio?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, se ofrecen entregas a domicilio dentro de zonas específicas. Los detalles se confirman al momento del pedido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                ¿Qué métodos de pago aceptamos?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Se aceptan pagos en efectivo y transferencias bancarias.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 texto-golden">Política de Privacidad</h5>
+                <div class="accordion" id="accordionPriv">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priv1">
+                                Privacidad y tratamiento de datos
+                            </button>
+                        </h2>
+                        <div id="priv1" class="accordion-collapse collapse" data-bs-parent="#accordionPriv">
+                            <div class="accordion-body text-center">
+                                <p class="mb-3">Conoce cómo manejamos tus datos personales.</p>
+                                <a href="politica.html" class="btn px-4 py-2" style="background-color: #E8A0B4; border-color: #E8A0B4; color: #fff; border-radius: 50px;">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+<br> 
+<br>
+<br>
+
+    <div class="logo-flotante">
+        <img src="ImagenesGB/LogoGB.jpg" alt="Golden Box" width="60" height="60" class="rounded-circle" style="object-fit: cover;">
+    </div>
+
+    <!-- Modal contacto -->
+    <div class="modal fade" id="modalContacto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4" style="border-radius:16px;">
+                <div class="modal-body">
+                    <div style="font-size:50px;color:#D4AF37;margin-bottom:8px;">&#10003;</div>
+                    <p class="fs-5 mb-4">¡Mensaje enviado correctamente!</p>
+                    <button type="button" class="btn px-5 py-2" data-bs-dismiss="modal" style="background:#E8A0B4;color:#fff;border-radius:50px;font-weight:600;">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

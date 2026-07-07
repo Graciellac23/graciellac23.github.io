@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GoldenBox. arreglos florares y más detalles">
+    <meta name="keywords" content="flores, bandejas, detalles">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Graciella Castillo">
+    <title>Golden Box</title>
+
+        <!-- Css Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="ImagenesGB/LogoGB.jpg"><!-- Icono de la página -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="Css/Style.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-golden">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand marca-golden" href="index.html">
+            <img src="ImagenesGB/LogoGB.jpg"
+                alt="Logo Golden Box"
+                width="45"
+                height="45"
+                class="rounded-circle"
+                style="object-fit: cover;">
+
+            <span class="texto-golden">Golden</span>
+            <span class="texto-box">Box</span>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarGolden">
+
+            <!-- Enlaces -->
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Catalogo.html">Catálogo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Noticias.html">Noticias</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Enlaces.html">Enlaces</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Contactos.html">Contactos</a>
+                </li>
+
+                <li class="nav-item" style="position:relative;">
+                    <a class="nav-link position-relative" href="#" id="favLink" title="Mis favoritos" onclick="toggleListaFav(event)">
+                        <i class="bi bi-heart"></i>
+                        <span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle" id="favBadge" style="font-size: 0.6rem;">0</span>
+                    </a>
+                    <div id="favDropdown" class="fav-dropdown" style="display:none;">
+                        <ol id="favLista"></ol>
+                        <p id="favVacio" style="display:none; margin:0; padding:8px; color:#999;">Sin favoritos</p>
+                    </div>
+                </li>
+            </ul>
+
+                            <!-- Botón modo oscuro -->
+            <button onclick="cambiarModo()"
+                class="btn btn-outline-dark ms-3"
+                id="btnModo">
+
+                <i class="bi bi-moon-fill" id="iconoModo"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<section class="hero-carousel">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-md-5 text-center text-md-start">
+                <em><h1 class="display-5 fw-bold">
+                    Regala algo especial, algo <span class="texto-golden">Golden</span></h1></em>
+
+                <p class="info-negocio mt-4 fs-5">
+                    🎁 Arreglos, bandejas, cajas, souvenirs y todo tipo de regalos y detalles 🎀
+                    <br><br>
+                    📍 Santo Domingo | Baní ✨
+                    <br><br>
+                    ✨ CEOs: @_gabby23c @duneskapolanco ✨
+                    <br><br>
+                    <strong>¡Ordena ya!</strong>
+                </p>
+
+                <div class="redes-sociales mt-4">
+                    <a href="https://instagram.com/goldenbox_cs" target="_blank" class="me-3 fs-3">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/18496262310" target="_blank" class="me-3 fs-3">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:correo@ejemplo.com" class="fs-3">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </div>
+                <a href="Catalogo.html" class="btn px-4 py-2 mt-3" style="background-color: #E8A0B4; border-color: #E8A0B4; color: #fff; border-radius: 50px; font-weight: 600;">
+                    Ver Catálogo</a>
+            </div>
+
+            <div class="col-md-7 position-relative">
+                <div class="favoritos-label">
+                    <span class="badge bg-golden px-3 py-2 fs-6">
+                        <i class="bi bi-arrow-return-right me-1"></i>
+                        Los favoritos de nuestros clientes
+                    </span>
+                </div>
+
+                <div id="carouselGolden" class="carousel slide">
+                    <div class="carousel-inner rounded-4">
+
+                        <div class="carousel-item active">
+                            <img src="ImagenesGB/Favorito1.png" class="d-block w-100 hero-img" alt="Arreglo floral 1">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="ImagenesGB/Favorito2.png" class="d-block w-100 hero-img" alt="Arreglo floral 2">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="ImagenesGB/Favorito3.png" class="d-block w-100 hero-img" alt="Arreglo floral 3">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="ImagenesGB/Favorito4.png" class="d-block w-100 hero-img" alt="Arreglo floral 4">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="ImagenesGB/Favorito5.png" class="d-block w-100 hero-img" alt="Arreglo floral 5">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselGolden" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselGolden" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--  productos -->
+<div class="bg-white py-4">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-0">
+            <span class="texto-golden">Nuestros</span> Productos
+        </h2>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/FotoEnmarcada1.png" alt="Foto FotoEnmarcada1" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Foto Enmarcada Modelo A</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/GentlemanBox.png" alt="Gentleman Box" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Gentleman Box</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/LoncheritaGolden.png" alt="Loncherira Golden" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Loncherita Golden</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/LuxBox.png" alt="Lux Box" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Lux Box</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/RosaEncapsulada.png" alt="Rosa Encapsulada" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Rosa Encapsulada</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="photocard">
+                    <img src="ImagenesGB/JocabelGoldenSun.png" alt="JocabelGoldenSun" class="photocard-img">
+                    <div class="photocard-overlay">
+                        <button class="photocard-like" onclick="toggleFav(this)">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                        <span class="photocard-nombre">Jocabel Golden Sun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sobre Nosotros -->
+<div class="bg-white py-4">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-0">
+            <span class="texto-golden">Sobre</span> Nosotros</h2>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+
+            <div class="col-md-6">
+                <div class="text-center mb-3">
+                    <button class="btn-dato-curioso" data-bs-toggle="popover" data-bs-title="Dato curioso" data-bs-content="Soy ingeniera industrial!" data-bs-placement="bottom">
+                        <i class="bi bi-lightbulb me-2"></i>Dato curioso</button>
+                </div>
+                <div class="photocard-sobre">
+                    <img src="ImagenesGB/Gabby.png" alt="CEO 1" class="photocard-sobre-img">
+                </div>
+                <ul class="mt-4 fs-5">
+                    <li class="mb-2">Un poco perfeccionista</li>
+                    <li class="mb-2">La que ama los detalles con intención</li>
+                    <li class="mb-2">La de las to do list infinitas</li>
+                    <li class="mb-2">La que sueña siempre en grande</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <div class="text-center mb-3">
+                    <button class="btn-dato-curioso" data-bs-toggle="popover" data-bs-title="Dato curioso" data-bs-content="Soy abogada!" data-bs-placement="bottom">
+                        <i class="bi bi-lightbulb me-2"></i>Dato curioso</button>
+                </div>
+                <div class="photocard-sobre">
+                    <img src="ImagenesGB/Duneska.png" alt="CEO 2" class="photocard-sobre-img">
+                </div>
+                <ul class="mt-4 fs-5">
+                    <li class="mb-2">Se estresa con facilidad</li>
+                    <li class="mb-2">La que disfruta los detalles en todas sus versiones</li>
+                    <li class="mb-2">La que cree que las cosas hechas con amor y dedicación tienen un mayor valor.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<!-- Footer -->
+<footer class="py-5 mt-5 bg-white">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 texto-golden">Preguntas frecuentes</h5>
+                <div class="accordion" id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                ¿Cómo puedo hacer un pedido?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Los pedidos se realizan por mensaje directo o contacto telefónico, indicando el producto que deseas y la fecha de entrega.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                ¿Con cuánta anticipación debo ordenar?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Se recomienda hacer el pedido con al menos 24 a 48 horas de anticipación para garantizar disponibilidad.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                ¿Se pueden hacer pedidos personalizados?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, se pueden crear pedidos personalizados según la ocasión y las preferencias del cliente.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                ¿Realizamos entregas a domicilio?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, se ofrecen entregas a domicilio dentro de zonas específicas. Los detalles se confirman al momento del pedido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                ¿Qué métodos de pago aceptamos?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Se aceptan pagos en efectivo y transferencias bancarias.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-3 texto-golden">Política de Privacidad</h5>
+                <div class="accordion" id="accordionPriv">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priv1">
+                                Privacidad y tratamiento de datos
+                            </button>
+                        </h2>
+                        <div id="priv1" class="accordion-collapse collapse" data-bs-parent="#accordionPriv">
+                            <div class="accordion-body text-center">
+                                <p class="mb-3">Conoce cómo manejamos tus datos personales.</p>
+                                <a href="politica.html" class="btn px-4 py-2" style="background-color: #E8A0B4; border-color: #E8A0B4; color: #fff; border-radius: 50px;">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<br>
+<br>
+<br>
+
+<!-- Logito GB fijo -->
+<div class="logo-flotante">
+    <img src="ImagenesGB/LogoGB.jpg" alt="Golden Box" width="60" height="60" class="rounded-circle" style="object-fit: cover;">
+</div>
+
+<!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
